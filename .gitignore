@@ -1,0 +1,57 @@
+# =========================
+# DATASETS
+# =========================
+360_v2/
+models/
+
+# =========================
+# CHECKPOINTS / MODELS
+# =========================
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# =========================
+# OUTPUTS / RESULTS
+# =========================
+outputs/
+logs/
+results/
+
+# =========================
+# PYTORCH / ML CACHE
+# =========================
+*.cache
+__pycache__/
+*.pyc
+
+# HuggingFace cache
+.cache/
+.huggingface/
+transformers_cache/
+
+# =========================
+# OPEN3D / PLY OUTPUTS
+# =========================
+*.ply
+
+# =========================
+# VENV / ENV
+# =========================
+venv/
+env/
+.venv/
+conda-meta/
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
