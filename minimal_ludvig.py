@@ -106,15 +106,32 @@ print("Uplifting semantic features...")
 
 for cam_id, cam in enumerate(tqdm(cameras)):
 
-    image_name = cam["img_name"] + ".JPG"
+    image_name = cam["img_name"]
+
+    # normalize extension once
+    image_name = os.path.basename(image_name)
 
     image_path = os.path.join(IMAGE_DIR, image_name)
 
     if not os.path.exists(image_path):
+        # fallback: try common extensions
+        base = os.path.splitext(image_name)[0]
+        candidates = [
+            base + ".JPG",
+            base + ".jpg",
+            base + ".png"
+        ]
 
-        print("Missing:", image_path)
+        image_path = None
+        for c in candidates:
+            p = os.path.join(IMAGE_DIR, c)
+            if os.path.exists(p):
+                image_path = p
+                break
 
-        continue
+        if image_path is None:
+            print("Missing:", image_name)
+            continue
 
     print(f"\nProcessing {image_name}")
 

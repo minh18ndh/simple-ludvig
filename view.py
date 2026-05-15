@@ -2,7 +2,7 @@ import open3d as o3d
 import numpy as np
 
 pcd = o3d.io.read_point_cloud(
-    "./outputs/semantic_bonsai.ply"
+    "./outputs/semantic_bonsai (basic).ply"
 )
 
 points = np.asarray(pcd.points)
